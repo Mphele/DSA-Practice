@@ -1,0 +1,12 @@
+# IntelliJ configuration
+.idea/
+*.iml
+
+# Compiled Java class files
+*.class
+out/
+build/
+
+# Python cache
+__pycache__/
+*.pyc
