@@ -38,29 +38,24 @@ import math
 # - 1 <= len(nums) <= 100_000
 # - 1 <= nums[i] <= 10_000
 def minimum_subarray_length(target, nums):
-    found = False
-    current = 0
-    min_num = len(nums)
-    sum=0
-    for num in nums:
-        if num==target:
-            return 1
+    left = 0
+    current_sum = 0
+    minimum_length = float("inf")
 
-        current+=1
-        sum+=num
-        if sum >= target:
-                found=True
-                if current<min_num:
-                    min_num = current
-                current =0
-                sum = 0 
+    for right in range(len(nums)):
+        current_sum += nums[right]
 
-        
+        while current_sum >= target:
+            current_length = right - left + 1
+            minimum_length = min(minimum_length, current_length)
 
+            current_sum -= nums[left]
+            left += 1
 
+    if minimum_length == float("inf"):
+        return 0
 
-    return min_num if found else 0
-                
+    return minimum_length
 
 
 
