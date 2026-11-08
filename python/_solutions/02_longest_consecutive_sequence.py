@@ -36,15 +36,16 @@ def longest_consecutive(nums):
 
 
     for num in nums:
-        current_num = num
+        if num -1 not in num_set:
+            current_num = num
 
-        current_con = 1
-        while current_num+1 in num_set:
-            current_con +=1
-            current_num+=1
+            current_con = 1
+            while current_num+1 in num_set:
+                current_con +=1
+                current_num+=1
 
-        if current_con>max_con:
-            max_con=current_con
+            if current_con>max_con:
+                max_con=current_con
 
     return max_con
 
