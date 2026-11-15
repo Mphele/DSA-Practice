@@ -1,6 +1,7 @@
 package com.practice;
 
 import java.util.Arrays;
+import java.util.*;
 
 public class Exercise06TopKFrequentElements {
 
@@ -30,7 +31,37 @@ public class Exercise06TopKFrequentElements {
      * - The runtime must be better than O(n log n).
      */
     public static int[] topKFrequent(int[] nums, int k) {
-        return null;
+
+        Map<Integer, Integer> frequency = new HashMap<>();
+
+        for(int num:nums){
+            int currentCount = frequency.getOrDefault(num,0);
+            frequency.put(num, currentCount+1);
+        }
+
+        List<Integer> values = new ArrayList<>(frequency.values());
+
+        values.sort(Comparator.reverseOrder());
+
+        List<Integer> kValues = new ArrayList<>();
+
+        for(int i=0; i<k; i++){
+            kValues.add(values.get(i));
+        }
+        int[] mostFrequent = new int[k];
+        int index =0;
+        for(int num: frequency.keySet()){
+
+            if(kValues.contains(frequency.get(num))){
+                mostFrequent[index] = num;
+                index++;
+            }
+
+        }
+
+        return mostFrequent;
+
+
     }
 
     private static String normalized(int[] values) {
