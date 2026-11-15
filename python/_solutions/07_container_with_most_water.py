@@ -22,20 +22,22 @@ import unittest
 # Constraints:
 # - 2 <= len(heights) <= 100_000
 # - 0 <= heights[i] <= 10_000
-def max_container_area(heights:list):
+def max_container_area(heights: list) -> int:
+    left = 0
+    right = len(heights) - 1
+    max_area = 0
 
-    longest = max(heights)
-    longest_index = heights.index(longest)
+    while left < right:
+        width = right - left
+        usable_height = min(heights[left], heights[right])
+        current_area = width * usable_height
 
-    max_area = float('-inf')
-    for index,height in enumerate(heights):
-        print(index)
-        pair_height = min(height, longest)
-        distance = abs(index - longest_index)
+        max_area = max(max_area, current_area)
 
-        current_area = pair_height*distance
-        if current_area>max_area:
-            max_area = current_area
+        if heights[left] < heights[right]:
+            left += 1
+        else:
+            right -= 1
 
     return max_area
 
