@@ -31,37 +31,41 @@ public class Exercise06TopKFrequentElements {
      * - The runtime must be better than O(n log n).
      */
     public static int[] topKFrequent(int[] nums, int k) {
-
         Map<Integer, Integer> frequency = new HashMap<>();
 
-        for(int num:nums){
-            int currentCount = frequency.getOrDefault(num,0);
-            frequency.put(num, currentCount+1);
+        for (int num : nums) {
+            int currentCount = frequency.getOrDefault(num, 0);
+            frequency.put(num, currentCount + 1);
         }
 
-        List<Integer> values = new ArrayList<>(frequency.values());
+        List<List<Integer>> buckets = new ArrayList<>();
 
-        values.sort(Comparator.reverseOrder());
-
-        List<Integer> kValues = new ArrayList<>();
-
-        for(int i=0; i<k; i++){
-            kValues.add(values.get(i));
+        for (int i = 0; i <= nums.length; i++) {
+            buckets.add(new ArrayList<>());
         }
+
+        for (Map.Entry<Integer, Integer> entry : frequency.entrySet()) {
+            int number = entry.getKey();
+            int count = entry.getValue();
+
+            buckets.get(count).add(number);
+        }
+
         int[] mostFrequent = new int[k];
-        int index =0;
-        for(int num: frequency.keySet()){
+        int resultIndex = 0;
 
-            if(kValues.contains(frequency.get(num))){
-                mostFrequent[index] = num;
-                index++;
+        for (int count = nums.length; count >= 1; count--) {
+            for (int number : buckets.get(count)) {
+                mostFrequent[resultIndex] = number;
+                resultIndex++;
+
+                if (resultIndex == k) {
+                    return mostFrequent;
+                }
             }
-
         }
 
         return mostFrequent;
-
-
     }
 
     private static String normalized(int[] values) {
