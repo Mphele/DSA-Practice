@@ -31,12 +31,14 @@ public class Exercise10BestTimeToBuyAndSellStock {
      */
     public static int maximumProfit(int[] prices) {
         int max_profit =0;
-       for(int i =0; i<prices.length-1;i++){
-           for(int j =i+1;j<prices.length;j++ ){
-               int current_profit = prices[j]-prices[i];
-               if(current_profit>max_profit){
-                   max_profit=current_profit;
-               }
+        int min_price = prices[0];
+       for(int i =1; i<prices.length;i++){
+           int current_profit = prices[i]-min_price;
+           if(prices[i]<min_price){
+               min_price=prices[i];
+           }
+           if (current_profit>max_profit){
+               max_profit=current_profit;
            }
        }
         return max_profit;
