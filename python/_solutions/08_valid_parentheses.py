@@ -40,7 +40,7 @@ def has_valid_parentheses(brackets: str) -> bool:
                 return False
     return True if len(open_brackets)==0 else False
 
-print(has_valid_parentheses("()[]{}"))
+
 
 class ValidParenthesesTests(unittest.TestCase):
     def test_single_pair(self):
