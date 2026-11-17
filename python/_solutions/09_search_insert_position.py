@@ -24,23 +24,20 @@ import unittest
 # - numbers contains distinct values in ascending order
 # - The required runtime is O(log n)
 def find_insert_position(numbers: list[int], target: int) -> int:
+    left = 0
+    right = len(numbers)
 
-    last_smaller_index =-1
+    while left < right:
+        middle = left + (right - left) // 2
 
-    for index,num in enumerate(numbers):
-        if num ==target:
-            return index
+        if numbers[middle] < target:
+            left = middle + 1
+        else:
+            right = middle
 
-        if num<target:
-            last_smaller_index=index
+    return left
 
-        if num>target:
-            return last_smaller_index +1
-
-    return last_smaller_index+1
-
-
-
+      
 
 class SearchInsertPositionTests(unittest.TestCase):
     def test_target_is_present(self):
