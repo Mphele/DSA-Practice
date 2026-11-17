@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "latest_batch": {
+    "generated_on": "2026-11-16",
+    "timezone": "Africa/Johannesburg",
+    "language_mix": {
+      "java": 1,
+      "python": 2
+    },
+    "files": [
+      {
+        "id": 8,
+        "language": "python",
+        "path": "python/_solutions/08_valid_parentheses.py",
+        "source_url": "https://leetcode.com/problems/valid-parentheses/"
+      },
+      {
+        "id": 9,
+        "language": "python",
+        "path": "python/_solutions/09_search_insert_position.py",
+        "source_url": "https://leetcode.com/problems/search-insert-position/"
+      },
+      {
+        "id": 10,
+        "language": "java",
+        "path": "javaSolutions/src/com/practice/Exercise10BestTimeToBuyAndSellStock.java",
+        "source_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+      }
+    ]
+  },
+  "known_problems": [
+    {
+      "id": 1,
+      "path": "python/_solutions/01_product_except_self.py",
+      "source_url": "https://leetcode.com/problems/product-of-array-except-self/"
+    },
+    {
+      "id": 2,
+      "path": "python/_solutions/02_longest_consecutive_sequence.py",
+      "source_url": "https://leetcode.com/problems/longest-consecutive-sequence/"
+    },
+    {
+      "id": 3,
+      "path": "python/_solutions/03_merge_overlapping_intervals.py",
+      "source_url": "https://leetcode.com/problems/merge-intervals/"
+    },
+    {
+      "id": 4,
+      "path": "python/_solutions/04_minimum_size_subarray_sum.py",
+      "source_url": "https://leetcode.com/problems/minimum-size-subarray-sum/"
+    },
+    {
+      "id": 5,
+      "path": "javaSolutions/src/com/practice/Exercise05GroupAnagrams.java",
+      "source_url": "https://leetcode.com/problems/group-anagrams/"
+    },
+    {
+      "id": 6,
+      "path": "javaSolutions/src/com/practice/Exercise06TopKFrequentElements.java",
+      "source_url": "https://leetcode.com/problems/top-k-frequent-elements/"
+    },
+    {
+      "id": 7,
+      "path": "python/_solutions/07_container_with_most_water.py",
+      "source_url": "https://leetcode.com/problems/container-with-most-water/"
+    },
+    {
+      "id": 8,
+      "path": "python/_solutions/08_valid_parentheses.py",
+      "source_url": "https://leetcode.com/problems/valid-parentheses/"
+    },
+    {
+      "id": 9,
+      "path": "python/_solutions/09_search_insert_position.py",
+      "source_url": "https://leetcode.com/problems/search-insert-position/"
+    },
+    {
+      "id": 10,
+      "path": "javaSolutions/src/com/practice/Exercise10BestTimeToBuyAndSellStock.java",
+      "source_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+    }
+  ]
+}

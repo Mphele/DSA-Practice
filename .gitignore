@@ -1,0 +1,18 @@
+# IDE metadata
+.idea/
+*.iml
+
+# Java build output
+out/
+build/
+*.class
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Local scratch files outside the daily DSA exercise process
+/snail.py
+/python_solutions/transpose_matrix.py
+/javaSolutions/src/com/practice/TransposeMatrix.java
+/javaSolutions/src/com/practice/debug.java
